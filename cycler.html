@@ -74,16 +74,22 @@
         }
     }
     function swap() {
-            let cyclerItems = document.getElementsByClassName("cycler")
-            let container = document.getElementById("target")
-            let a = Math.floor(Math.random() * cyclerItems.length)
-            let b = Math.floor(Math.random() * cyclerItems.length)
-            let firstInnerText = document.getElementsByClassName("cycler")[a]
-            let secondInnerText = document.getElementsByClassName("cycler")[b]
-            if(cyclerItems.length > 1) {
-                let temp = firstInnerText.innerHTML
-                firstInnerText.innerHTML = secondInnerText.innerHTML
-                secondInnerText.innerHTML = temp
+            var cItems = document.getElementsByClassName("cycler");
+            var num1 = Math.random() *  cItems.length;
+            var target_class =  document.getElementById("target");
+            var num2 = Math.random() *  cItems.length;
+
+            var firstElement = document.getElementsByClassName("cycler")[Math.floor(num1)];
+            var secElement = document.getElementsByClassName("cycler")[Math.floor(num2)];
+            
+          
+            
+            if(cItems.length > 1) {
+               // console.log("Print if this loop is executed");
+                var swap = firstElement.innerHTML;
+                firstElement.innerHTML = secElement.innerHTML;
+                console.log(firstElement.innerHTML)
+                secElement.innerHTML = swap;
             }
         }
 </script>
